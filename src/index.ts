@@ -1,3 +1,5 @@
+//Classes in typescript
+
 class User {
     email: string
     name: string
@@ -10,3 +12,5 @@ class User {
 
 const vecta = new User("vec@ymail.com", "vickyboy")
 vecta.city = "Imo state"
+
+//Getters and Setters.
