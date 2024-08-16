@@ -33,3 +33,35 @@ identityFour<Bottle>({
     brand: "",
     type: 0
 })
+
+//
+const getMoreSearchProducts = <T,>(products: T[]): T => {
+    const myIndex = 5
+    return products[myIndex]
+}
+
+//Generic classes 
+
+interface Database{
+    connection: string,
+    username: string,
+    password: string,
+}
+
+function anotherFunc<T, U extends Database>(valOne: T, valTwo: U){
+    return{
+        valOne,
+        valTwo,
+    }
+}
+
+// anotherFunc(3, {})
+
+class Sellable<T>{
+
+    public cart: T[]= []
+
+    addToCart(product: T){
+        this.cart.push(product)
+    }
+}
