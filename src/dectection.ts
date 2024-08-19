@@ -80,11 +80,31 @@ interface Rectangle {
     width: number,
 }
 
-type Shapes = Circle | Square 
+type Shapes = Circle | Square | Rectangle
 
 function getTrueShape(shape: Shapes){
     if(shape.kind === "circle" ){
             return Math.PI * shape.radius ** 2
     }
-    return shape.side * shape.side
+    // return shape.side * shape.side
+
+}
+
+
+function getArea(shape: Shapes){
+    switch(shape.kind){
+        case "circle" : 
+        return Math.PI * shape.radius ** 2;
+        break
+        case "square":
+            return shape.side * shape.side
+        break
+        case "rectangle":
+            return shape.length * shape.width
+        break
+            default:
+                const _defaultforshape: never = shape //Here we use the never type
+                return _defaultforshape;
+    }
+    
 }
